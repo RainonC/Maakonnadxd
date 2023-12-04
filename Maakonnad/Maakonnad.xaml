@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maakonnad.Maakonnad">
+    
+        ﻿
+
+        <ContentPage.Content>
+            <StackLayout>
+                <Entry x:Name="nimetusEntry" Text="{Binding Path=Nimetus}" />
+                <Entry x:Name="pealinnEntry" Text="{Binding Path=Pealinn}" />
+                <StackLayout Orientation="Horizontal">
+                    <Stepper x:Name="arv_stepper" Minimum="0" Maximum="100000" Increment="100" Value="{Binding Path=Inimeste_arv}"/>
+                    <Label x:Name="arvlbl" FontSize="Large"
+                    Text="{Binding Source={x:Reference Name=arv_stepper]}, Path=Value }" />
+                </StackLayout>
+                <Button Text="Salvesta" Clicked="Button_Clicked" />
+            <Button Text="Salvesta failisse" Clicked="Salvesta_failisse" />
+            <Button Text="Loe failist" Clicked="Loe_failist" />
+            <Button Text="Kustuta faili" Clicked="Kustuta_faili" />
+            <Label x:Name="lbl" />
+        </StackLayout>
+        </ContentPage.Content>
